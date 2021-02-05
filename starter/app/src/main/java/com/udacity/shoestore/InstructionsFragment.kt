@@ -23,6 +23,8 @@ class InstructionsFragment : Fragment() {
         binding.buttonGoToStore.setOnClickListener(
             Navigation.createNavigateOnClickListener(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment())
         )
+
+
         return binding.root
     }
 

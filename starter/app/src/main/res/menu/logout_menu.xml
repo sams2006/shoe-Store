@@ -3,5 +3,5 @@
 
     <item
         android:id="@+id/loginFragment"
-        android:title="logout" />
+        android:title="Log Out" />
 </menu>

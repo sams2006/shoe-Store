@@ -24,6 +24,7 @@ class WelcomeFragment : Fragment() {
             Navigation.createNavigateOnClickListener(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionsFragment())
         )
         return binding.root
+
     }
 
 
