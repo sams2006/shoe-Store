@@ -1,7 +1,12 @@
 package com.udacity.shoestore
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
@@ -13,8 +18,9 @@ import kotlinx.android.synthetic.main.fragment_details.*
 
 class ShoeListFragment : Fragment() {
 
+   // private var parentLinearLayout: LinearLayout? = null
 
-
+    @SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,21 +29,14 @@ class ShoeListFragment : Fragment() {
 
         val binding : FragmentShoeListBinding = DataBindingUtil.inflate(inflater , R.layout.fragment_shoe_list , container , false)
 
-        binding.buttonAdidas.setOnClickListener (
-           Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToDetailsFragment("adidas",12 , R.drawable.item1 , "adidas" , "Feel fast and agile as a wild cat as you speed down city streets. These adidas Ultraboost DNA Shoes have a stretchy knit upper that adapts to the shape of your foot as you move. A leopard print adds an exotic look to the supportive cage and heel counter. Responsive cushioning keeps your stride energized.\n" +
-                   "\n"))
-        )
-        binding.buttonNike.setOnClickListener(
-                Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToDetailsFragment("Nike", 14 , R.drawable.item2 , "Nike" , "Feel fast and agile as a wild cat as you speed down city streets. These adidas Ultraboost DNA Shoes have a stretchy knit upper that adapts to the shape of your foot as you " +
-                        "" +
-                        "Feel fast and agile as a wild cat as you speed down city streets. These adidas Ultraboost DNA Shoes have a stretchy knit upper that adapts to the shape of your foot as you move. A leopard print adds an exotic look to the supportive cage and heel counter. Responsive cushioning keeps your stride energized.\n" +
-                        "\nmove. A leopard print adds an exotic look to the supportive cage and heel counter. Responsive cushioning keeps your stride energized.\n " +
-                        "\n"))
-        )
+
 
         binding.fab.setOnClickListener(
-                Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentSelf())
+                Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToDetailsFragment())
         )
+
+
+
 
         setHasOptionsMenu(true)
 
@@ -53,6 +52,7 @@ class ShoeListFragment : Fragment() {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
+
 
 
 }
