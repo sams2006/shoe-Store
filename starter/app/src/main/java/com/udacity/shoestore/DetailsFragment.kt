@@ -43,7 +43,7 @@ class DetailsFragment : Fragment() {
 
 
 
-
+//
 
 
     viewModel.shoeName.observe(this , Observer { newShoeName ->
