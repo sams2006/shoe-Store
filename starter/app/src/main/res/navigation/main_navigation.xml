@@ -45,11 +45,13 @@
             app:destination="@id/detailsFragment"
             app:popUpTo="@id/main_navigation"
             app:popUpToInclusive="false" />
-        <action
-            android:id="@+id/action_shoeListFragment_self"
-            app:destination="@id/shoeListFragment"
-            app:popUpTo="@id/main_navigation"
-            app:popUpToInclusive="false" />
+        <argument
+            android:name="shoe"
+            app:argType="com.udacity.shoestore.models.Shoe"
+            app:nullable="true" />
+        <argument
+            android:name="order"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
