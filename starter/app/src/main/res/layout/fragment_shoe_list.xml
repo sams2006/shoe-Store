@@ -5,7 +5,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp">
 
         <LinearLayout
             android:id="@+id/parent_linear_layout"
@@ -26,69 +27,20 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_add_shoeName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold|italic"
-                        android:visibility="gone" />
-
-                    <TextView
-                        android:id="@+id/text_add_company"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="For men" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:gravity="center_vertical"
-                        android:text="13 $"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nike Blazer"
+                        android:text="@string/nike_blazer"
                         android:textStyle="bold|italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike" />
+                        android:text="@string/nike" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="For men" />
+                        android:text="@string/for_men" />
 
                 </LinearLayout>
 
@@ -103,7 +55,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:gravity="center_vertical"
-                        android:text="13 $"
+                        android:text="@string/_13"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -126,18 +78,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike Air Force1"
+                        android:text="@string/nike_air_force1"
                         android:textStyle="bold|italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike" />
+                        android:text="@string/nike" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="For men" />
+                        android:text="@string/for_men" />
 
                 </LinearLayout>
 
@@ -152,7 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:gravity="center_vertical"
-                        android:text="15 $"
+                        android:text="@string/_15"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -173,18 +125,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike Air Max 270"
+                        android:text="@string/nike_air_max_270"
                         android:textStyle="bold|italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike" />
+                        android:text="@string/nike" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="For men" />
+                        android:text="@string/for_men" />
 
                 </LinearLayout>
 
@@ -199,7 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:gravity="center_vertical"
-                        android:text="20 $"
+                        android:text="@string/_20"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -220,18 +172,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike Jordan"
+                        android:text="@string/nike_jordan"
                         android:textStyle="bold|italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike" />
+                        android:text="@string/nike" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="For Basketball" />
+                        android:text="@string/for_basketball" />
 
                 </LinearLayout>
 
@@ -246,7 +198,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:gravity="center_vertical"
-                        android:text="50 $"
+                        android:text="@string/_50"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -269,18 +221,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lebran18"
+                        android:text="@string/lebran18"
                         android:textStyle="bold|italic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nike" />
+                        android:text="@string/nike" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="For Basketball" />
+                        android:text="@string/for_basketball" />
 
                 </LinearLayout>
 
@@ -295,7 +247,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:gravity="center_vertical"
-                        android:text="13 $"
+                        android:text="@string/_13"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -316,7 +268,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
-                android:contentDescription="submit"
+                android:contentDescription="@string/submit"
                 android:src="@drawable/ic_add" />
 
         </LinearLayout>

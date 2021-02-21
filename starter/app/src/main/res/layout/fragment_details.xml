@@ -16,7 +16,7 @@
         <LinearLayout
             android:id="@+id/linearLayout_details"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:orientation="vertical"
             tools:context=".DetailsFragment">
@@ -32,15 +32,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="16dp"
-                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
                     android:paddingBottom="16dp"
-                    android:text="Shoe Name :" />
+                    android:text="@string/shoe_name" />
 
                 <EditText
                     android:id="@+id/edit_shoe_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Enter shoe Name"
+                    android:hint="@string/enter_shoe_name"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -60,7 +60,7 @@
                     android:id="@+id/text_company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Company :" />
+                    android:text="@string/company" />
 
                 <EditText
                     android:id="@+id/edit_company_name"
@@ -68,7 +68,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Trademark"
                     android:paddingLeft="5dp"
-                    android:text="@={shoe.company}" />
+                    android:text="@={shoe.company}"
+                    android:autofillHints="" />
 
                 <TextView
                     android:id="@+id/add_company_name"
@@ -89,13 +90,13 @@
                     android:id="@+id/text_shoe_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Shoe Size :" />
+                    android:text="@string/shoe_size" />
 
                 <EditText
                     android:id="@+id/edit_size_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="shoe size number"
+                    android:hint="@string/shoe_size_number"
                     android:inputType="numberDecimal"
                     android:paddingLeft="5dp" />
 
@@ -110,15 +111,17 @@
                     android:id="@+id/text_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Description" />
+                    android:text="@string/description" />
 
                 <EditText
                     android:id="@+id/edit_Description_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="please be specific"
-                    android:paddingLeft="5dp"
-                    android:text="@={shoe.description}" />
+                    android:hint="@string/please_be_specific"
+                    android:paddingStart="5dp"
+                    android:text="@={shoe.description}"
+                    android:autofillHints=""
+                    android:inputType="text" />
 
             </LinearLayout>
 
@@ -132,14 +135,14 @@
                     android:id="@+id/button_save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Save" />
+                    android:text="@string/save" />
 
                 <Button
                     android:id="@+id/Button_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:text="cancel" />
+                    android:paddingStart="5dp"
+                    android:text="@string/cancel" />
 
             </LinearLayout>
 
