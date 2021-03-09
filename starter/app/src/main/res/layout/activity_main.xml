@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--i use layout tag because i use dataBinding-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -11,6 +12,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <!--        NavHostFragment-->
         <fragment
             android:id="@+id/myNavHostFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -19,7 +21,7 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/main_navigation" />
 
-
+        <!--        add toolbar-->
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

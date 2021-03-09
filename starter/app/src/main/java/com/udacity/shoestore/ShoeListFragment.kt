@@ -3,21 +3,22 @@ package com.udacity.shoestore
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.models.ShoeListViewModel
 
 
 class ShoeListFragment : Fragment() {
 
-    private var linearLayout: LinearLayout? = null
 
     private lateinit var binding: FragmentShoeListBinding
+
+    private val sharedViewModel: ShoeListViewModel by activityViewModels()
 
 
     @SuppressLint("ResourceType")
@@ -32,25 +33,17 @@ class ShoeListFragment : Fragment() {
 
 
         binding.fab.setOnClickListener(
+
+
                 Navigation.createNavigateOnClickListener(ShoeListFragmentDirections.actionShoeListFragmentToDetailsFragment())
+
         )
 
+        binding.apply {
+            viewModel = sharedViewModel
 
-        val args = ShoeListFragmentArgs.fromBundle(requireArguments())
-        linearLayout = binding.addLinearLayout
-        val textViewOrder = TextView(context)
-        val textCompany = TextView(context)
-        val textShoeName = TextView(context)
-        val textDescription = TextView(context)
-        textViewOrder.text = args.order
-        textViewOrder.textSize = 24F
-        textShoeName.text = args.shoe?.name
-        textCompany.text = args.shoe?.company
-        textDescription.text = args.shoe?.description
-        linearLayout!!.addView(textViewOrder)
-        linearLayout!!.addView(textShoeName)
-        linearLayout!!.addView(textCompany)
-        linearLayout!!.addView(textDescription)
+        }
+
 
 
 
@@ -61,6 +54,7 @@ class ShoeListFragment : Fragment() {
 
         return binding.root
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -74,3 +68,4 @@ class ShoeListFragment : Fragment() {
 
 
 }
+

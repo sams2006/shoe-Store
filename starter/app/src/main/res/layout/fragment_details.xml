@@ -2,17 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<!--   i use data tag because i store data in viewModel and update UI-->
     <data>
 
         <variable
-            name="shoe"
-            type="com.udacity.shoestore.models.Shoe" />
+            name="viewModel"
+            type="com.udacity.shoestore.models.ShoeListViewModel" />
     </data>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--        linerLayout vertical Parent-->
+        <!--        linerLayoutChild horizontal Parent , inside 2 textView and EditText-->
         <LinearLayout
             android:id="@+id/linearLayout_details"
             android:layout_width="match_parent"
@@ -34,7 +37,7 @@
                     android:paddingTop="16dp"
                     android:paddingEnd="5dp"
                     android:paddingBottom="16dp"
-                    android:text="@string/shoe_name" />
+                    android:text="@string/shoename" />
 
                 <EditText
                     android:id="@+id/edit_shoe_name"
@@ -47,14 +50,14 @@
                     android:id="@+id/add_shoe_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@={shoe.name}"
                     android:visibility="gone" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/text_company"
@@ -66,17 +69,15 @@
                     android:id="@+id/edit_company_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autofillHints=""
                     android:hint="Trademark"
-                    android:paddingLeft="5dp"
-                    android:text="@={shoe.company}"
-                    android:autofillHints="" />
+                    android:paddingLeft="5dp" />
 
                 <TextView
                     android:id="@+id/add_company_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="7dp"
-                    android:text="@={shoe.company}"
                     android:visibility="gone" />
 
             </LinearLayout>
@@ -84,7 +85,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/text_shoe_size"
@@ -105,7 +107,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/text_description"
@@ -117,11 +120,10 @@
                     android:id="@+id/edit_Description_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/please_be_specific"
-                    android:paddingStart="5dp"
-                    android:text="@={shoe.description}"
                     android:autofillHints=""
-                    android:inputType="text" />
+                    android:hint="@string/please_be_specific"
+                    android:inputType="text"
+                    android:paddingStart="5dp" />
 
             </LinearLayout>
 

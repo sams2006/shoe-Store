@@ -8,12 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
-import com.udacity.shoestore.models.Shoe
 
 
 class InstructionsFragment : Fragment() {
-    private val shoe: Shoe = Shoe()
-    private var order = ""
 
 
     override fun onCreateView(
@@ -24,7 +21,7 @@ class InstructionsFragment : Fragment() {
         val binding: FragmentInstructionsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
 
         binding.buttonGoToStore.setOnClickListener(
-                Navigation.createNavigateOnClickListener(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment(shoe, order))
+                Navigation.createNavigateOnClickListener(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment())
         )
 
 

@@ -7,77 +7,52 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentDetailsBinding
-import com.udacity.shoestore.models.DetailsViewModel
-import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.models.ShoeListViewModel
 
 
 class DetailsFragment : Fragment() {
 
-   private  lateinit var viewModel : DetailsViewModel
+
+    private val sharedViewModel: ShoeListViewModel by activityViewModels()
     private lateinit var binding: FragmentDetailsBinding
 
-   private val shoe : Shoe = Shoe()
-
-    private var order = "your order :"
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       binding = DataBindingUtil.inflate(inflater , R.layout.fragment_details , container , false)
-
-        Log.i("DetailsFragment","called viewModel provider")
-
-        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
-
-        binding.shoe = shoe
-        binding.lifecycleOwner = this
-
-
-        binding.buttonSave.setOnClickListener { addShoe(shoe)}
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
 
 
 
+        Log.i("DetailsFragment", "called viewModel provider")
 
 
 
-        binding.ButtonCancel.setOnClickListener(
-                Navigation.createNavigateOnClickListener(DetailsFragmentDirections.actionDetailsFragmentToShoeListFragment(shoe.copy(), order))
-        )
+        binding.viewModel = sharedViewModel
 
-// viewModel.shoeList.observe(this , Observer {newShoe ->
-//     shoe.name = newShoe.toString()
-//     shoe.company = newShoe.toString()
-//     shoe.description = newShoe.description
-// })
+
+        binding.buttonSave.setOnClickListener {
+            sharedViewModel.setOrder("Your Order :", binding.editShoeName.text, binding.editCompanyName.text, binding.editSizeNumber.text, binding.editDescriptionContent.text)
+
+            findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToShoeListFragment())
+        }
+
+
+
+
 
         return binding.root
     }
 
- private fun addShoe(shoe: Shoe){
 
-  binding.apply {
-      shoe?.name = editShoeName.text.toString()
-      invalidateAll()
-      shoe?.company = editCompanyName.text.toString()
-      shoe?.description = editDescriptionContent.text.toString()
+}
 
 
-
-      val action = DetailsFragmentDirections.actionDetailsFragmentToShoeListFragment(shoe?.copy(), order)
-      findNavController().navigate(action)
-
-
-  }
-
- }
-
- }
 
 
 

@@ -3,11 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ShoeListFragment">
 
+    <!--   i use data tag because i store data in viewModel and update UI-->
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.models.ShoeListViewModel" />
+
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="48dp">
 
+        <!--   i have linerLayout vertical and linerLayout horizontal child and linerLayout vertical child -->
+        <!--  in linerLayout horizontal child there are 3 textView -->
+        <!--  in linerLayout vertical child there is textView -->
         <LinearLayout
             android:id="@+id/parent_linear_layout"
             android:layout_width="match_parent"
@@ -255,6 +267,41 @@
 
             </LinearLayout>
 
+            <!--  in LinearLayout vertical are 4 textView , store data in ViewModel and update UI-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="36sp"
+                    android:text="@{viewModel.order.toString()}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.name.toString()}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.company.toString()}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.size.toString()}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.describe.toString()}" />
+
+            </LinearLayout>
+
+
             <LinearLayout
                 android:id="@+id/add_linear_layout"
                 android:layout_width="match_parent"
@@ -262,6 +309,8 @@
                 android:orientation="vertical">
 
             </LinearLayout>
+
+            <!--            FloatingActionButton-->
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
